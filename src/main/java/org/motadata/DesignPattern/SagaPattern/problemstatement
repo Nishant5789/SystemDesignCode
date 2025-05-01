@@ -1,0 +1,29 @@
+🧩 Problem Statement:
+"E-commerce Order Placement with Distributed Services"
+
+A company runs an e-commerce platform with three microservices:
+
+Order Service – accepts customer orders.
+
+Inventory Service – checks and reserves product stock.
+
+Payment Service – processes payments.
+
+When a customer places an order, the following steps must occur:
+
+The Order Service receives the order request.
+
+It then asks the Inventory Service to reserve the requested items.
+
+If successful, it calls the Payment Service to deduct the amount.
+
+Once payment is successful, the order is marked as “CONFIRMED”.
+
+However, failures can happen at any point:
+
+If inventory is not available, the order must be cancelled.
+
+If payment fails, the inventory reservation must be rolled back.
+
+You need to implement this using a Saga pattern to manage data consistency across these services.
+
